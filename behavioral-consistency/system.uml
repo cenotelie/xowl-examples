@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_531sIDlGEeeyZLCLFB46mg" name="RootElement">
+  <packagedElement xmi:type="uml:Component" xmi:id="_OolXMDlHEeeyZLCLFB46mg" name="RailwayCrossing" classifierBehavior="_FtxYUDlHEeeyZLCLFB46mg">
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_FtxYUDlHEeeyZLCLFB46mg" name="CrossingSM">
+      <region xmi:type="uml:Region" xmi:id="_Ggt4MDlHEeeyZLCLFB46mg" name="MainRegion">
+        <transition xmi:type="uml:Transition" xmi:id="_LJAcgDlIEeeyZLCLFB46mg" source="_hLiVADlHEeeyZLCLFB46mg" target="_pvhIQDlHEeeyZLCLFB46mg"/>
+        <transition xmi:type="uml:Transition" xmi:id="_WpigcDlIEeeyZLCLFB46mg" name="onTrainIncoming" source="_pvhIQDlHEeeyZLCLFB46mg" target="_xE2-IDlHEeeyZLCLFB46mg"/>
+        <transition xmi:type="uml:Transition" xmi:id="_Zs8nEDlIEeeyZLCLFB46mg" name="onClosingFinished" source="_xE2-IDlHEeeyZLCLFB46mg" target="_yo0rQDlHEeeyZLCLFB46mg"/>
+        <transition xmi:type="uml:Transition" xmi:id="_jorQYDlIEeeyZLCLFB46mg" name="onTrainLeft" source="_yo0rQDlHEeeyZLCLFB46mg" target="_c4c5wDlIEeeyZLCLFB46mg"/>
+        <transition xmi:type="uml:Transition" xmi:id="_lHYqEDlIEeeyZLCLFB46mg" name="onOpeningFinished" source="_c4c5wDlIEeeyZLCLFB46mg" target="_pvhIQDlHEeeyZLCLFB46mg"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_hLiVADlHEeeyZLCLFB46mg" name="initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_pvhIQDlHEeeyZLCLFB46mg" name="GateOpen"/>
+        <subvertex xmi:type="uml:State" xmi:id="_xE2-IDlHEeeyZLCLFB46mg" name="GateClosing"/>
+        <subvertex xmi:type="uml:State" xmi:id="_yo0rQDlHEeeyZLCLFB46mg" name="GateClosed"/>
+        <subvertex xmi:type="uml:State" xmi:id="_c4c5wDlIEeeyZLCLFB46mg" name="GateOpening"/>
+      </region>
+    </ownedBehavior>
+  </packagedElement>
+</uml:Model>
