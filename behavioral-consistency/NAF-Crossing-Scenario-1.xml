@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Classes>
+    <Class>
+        <SADiagram SAObjId="_274" SAObjName="Scenario - One Train"
+                   SAObjMinorTypeName="Trace d'événement de systèmes NSV-10c" SAObjMinorTypeNum="130"
+                   SAObjMajorTypeNum="1" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017" SAObjUpdateTime="14:48:19"
+                   SAObjFQName="Scenario - One Train" SADgmCLevelNumber="" SADgmSnapGridEnt="0" SADgmSnapGridLin="0"
+                   SADgmPGridNumEnt="4 4" SADgmPGridNumLin="10 10" SADgmPGridSizeEnt="25 25" SADgmPGridSizeLin="10 10"
+                   SADgmGridUnit100="100 100" SADgmBPresentationMenu="0" SADgmBShowPages="0" SADgmBShowRuler="0"
+                   SADgmBShowGrid="-1" SADgmBShowScroll="-1" SADgmBShowNodeShadow="-1" SADgmBShowLineShadow="0"
+                   SADgmBShowTextShadow="0" SADgmPShadowDelta="5 5" SADgmRGBShadowColor="0x00c0c0c0"
+                   SADgmRMargin="50 50 50 50" SADgmBBorder="0" SADgmBorderOffset="-13" SADgmWBorderPenStyle="0x0010"
+                   SADgmBDgmBorder="0" SADgmIDgmForm="0" SADgmWOrientation="0x0003" SADgmBDgmPDefault="1"
+                   SADgmBIsHierarchy="0" SADgmBBackgroundColorOn="0" SADgmRGBBackgroundColor="0x00ffffff"
+                   SADgmWLinePenStyle="0x0003">
+            <SAProperty SAPrpName="~C~" SAPrpValue="1" SAPrpEditType="0" SAPrpLength="0"/>
+            <SAProperty SAPrpName="~T~" SAPrpValue="130" SAPrpEditType="0" SAPrpLength="0"/>
+            <SAProperty SAPrpName="DGX File Name" SAPrpValue="D0000001.DGX" SAPrpEditType="0" SAPrpLength="0"/>
+            <SAProperty SAPrpName="Initial Date" SAPrpValue="20170515" SAPrpEditType="2" SAPrpLength="10"/>
+            <SAProperty SAPrpName="GUID" SAPrpValue="e879cca2-7908-41b4-a42e-d48083d963d3" SAPrpEditType="1"
+                        SAPrpLength="64"/>
+            <SAProperty SAPrpName="Initial Audit" SAPrpValue="lqurent" SAPrpEditType="1" SAPrpLength="8"/>
+            <SAProperty SAPrpName="Initial Time" SAPrpValue="105703" SAPrpEditType="7" SAPrpLength="11"/>
+            <SAProperty SAPrpName="Description" SAPrpValue="" SAPrpEditType="1" SAPrpLength="4074"/>
+            <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+            <SAProperty SAPrpName="OSLCLink" SAPrpValue="" SAPrpEditType="8" SAPrpLength="4074"
+                        SAPrpEditDefMajorType="Definition" SAPrpEditDefMinorType="Lien OSLC"/>
+            <SAProperty SAPrpName="Reference Documents" SAPrpValue="" SAPrpEditType="18" SAPrpLength="1024"/>
+            <SAProperty SAPrpName="SA VISIO Last Modified By" SAPrpValue="SA" SAPrpEditType="0" SAPrpLength="0"/>
+            <SAProperty SAPrpName="Last Change Date" SAPrpValue="20170515" SAPrpEditType="2" SAPrpLength="10"/>
+            <SAProperty SAPrpName="Last Change Time" SAPrpValue="144819" SAPrpEditType="7" SAPrpLength="11"/>
+            <SAProperty SAPrpName="Last Change Audit" SAPrpValue="lqurent" SAPrpEditType="1" SAPrpLength="8"/>
+            <SASymbol SAObjId="_301" SAObjName="Train" SAObjMinorTypeName="Chronologie des événements d'entité Sys"
+                      SAObjMinorTypeNum="759" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:40:33" SAObjFQName="&quot;TrainNode&quot;.&quot;Train&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_282" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="0" SASymXPEntity="0" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="1"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0002" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x0002" SASymFlags2="0x0000"
+                      SASymFlags3="0x0000" SASymTextFlags="0x0a3a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0003" SASymSeqNum="0" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="0" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="1" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="151" SASymLocY="508"
+                      SASymSizeX="108" SASymSizeY="487" SASymNameLocX="149" SASymNameLocY="40" SASymNameSizeX="104"
+                      SASymNameSizeY="17" SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0">
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="759" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Create Action" SAPrpValue="F" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Containing System Node" SAPrpValue="TrainNode" SAPrpEditType="10"
+                            SAPrpLength="80" SAPrpEditDefMajorType="Definition"
+                            SAPrpEditDefMinorType="Noeud du système">
+                    <SALink SALinkName="TrainNode" SALinkIdentity="_281"/>
+                </SAProperty>
+                <SARelation SARelId="_303" SARelTypeNum="6" SARelTypeName="connects"/>
+                <SARelation SARelId="_304" SARelTypeNum="6" SARelTypeName="connects"/>
+                <SARelation SARelId="_327" SARelTypeNum="6" SARelTypeName="connects"/>
+                <SARelation SARelId="_314" SARelTypeNum="8" SARelTypeName="connects"/>
+                <SARelation SARelId="_327" SARelTypeNum="8" SARelTypeName="connects"/>
+                <SARelation SARelId="_327" SARelTypeNum="28" SARelTypeName="embeds"/>
+            </SASymbol>
+            <SASymbol SAObjId="_302" SAObjName="Crossing" SAObjMinorTypeName="Chronologie des événements d'entité Sys"
+                      SAObjMinorTypeNum="759" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:40:38" SAObjFQName="&quot;CrossingNode&quot;.&quot;Crossing&quot;"
+                      SASymIdDgm="_274" SASymIdDef="_284" SASymArrangement="0" SASymOtherSymbology="0"
+                      SASymProperties="0x0000" SASymOrder="1" SASymXPEntity="1" SASymXPLink="65535" SASymXPGroup="65535"
+                      SASymXPSibling="2" SASymXPSubordinate="65535" SASymPenStyle="0x0002" SASymFontName=""
+                      SASymFontNameForName="" SASymFontNameForGC="" SASymFontHeight="0x0000"
+                      SASymFontHeightForName="0x0000" SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000"
+                      SASymFontFlagsForName="0x0000" SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003"
+                      SASymFlags="0x0002" SASymFlags2="0x0000" SASymFlags3="0x0000" SASymTextFlags="0x0a3a"
+                      SASymStyle="0" SASymAuxStyle="0x0000" SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00"
+                      SASymFGColor="0x00" SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00"
+                      SASymUncleCount="0x00" SASymStyleFlags="0x0003" SASymSeqNum="0" SASymRotation="0"
+                      SASymError1="0x00" SASymError2="0x00" SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0"
+                      SASymHasDspMode="0" SASymDspMode="0x0000" SASymDspModeExt="0x00000000" SASymCLevelNumber="0"
+                      SASymPenColorOn="1" SASymPenColorRed="0" SASymPenColorGreen="130" SASymPenColorBlue="236"
+                      SASymFillColorOn="1" SASymFillColorRed="176" SASymFillColorGreen="213" SASymFillColorBlue="255"
+                      SASymFontColorOn="0" SASymFontColorRed="0" SASymFontColorGreen="0" SASymFontColorBlue="0"
+                      SASymFontColorRedForName="0" SASymFontColorGreenForName="0" SASymFontColorBlueForName="0"
+                      SASymFontColorRedForGC="0" SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0"
+                      SASymLocX="396" SASymLocY="510" SASymSizeX="108" SASymSizeY="487" SASymNameLocX="394"
+                      SASymNameLocY="42" SASymNameSizeX="104" SASymNameSizeY="17" SASymDescLocX="0" SASymDescLocY="0"
+                      SASymDescSizeX="0" SASymDescSizeY="0">
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="759" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Create Action" SAPrpValue="F" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Containing System Node" SAPrpValue="CrossingNode" SAPrpEditType="10"
+                            SAPrpLength="80" SAPrpEditDefMajorType="Definition"
+                            SAPrpEditDefMinorType="Noeud du système">
+                    <SALink SALinkName="CrossingNode" SALinkIdentity="_283"/>
+                </SAProperty>
+                <SARelation SARelId="_311" SARelTypeNum="6" SARelTypeName="connects"/>
+                <SARelation SARelId="_313" SARelTypeNum="6" SARelTypeName="connects"/>
+                <SARelation SARelId="_314" SARelTypeNum="6" SARelTypeName="connects"/>
+                <SARelation SARelId="_303" SARelTypeNum="8" SARelTypeName="connects"/>
+                <SARelation SARelId="_304" SARelTypeNum="8" SARelTypeName="connects"/>
+                <SARelation SARelId="_311" SARelTypeNum="8" SARelTypeName="connects"/>
+                <SARelation SARelId="_313" SARelTypeNum="8" SARelTypeName="connects"/>
+                <SARelation SARelId="_311" SARelTypeNum="28" SARelTypeName="embeds"/>
+                <SARelation SARelId="_313" SARelTypeNum="28" SARelTypeName="embeds"/>
+            </SASymbol>
+            <SASymbol SAObjId="_327" SAObjName="MoveOnCrossing" SAObjMinorTypeName="Evénement système"
+                      SAObjMinorTypeNum="754" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:48:17" SAObjFQName="&quot;MoveOnCrossing&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_315" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="7" SASymXPEntity="6" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="65535"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0010" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x8001" SASymFlags2="0x0800"
+                      SASymFlags3="0x0000" SASymTextFlags="0x063a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0001" SASymSeqNum="7" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="7" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="0" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="198" SASymLocY="281"
+                      SASymSizeX="125" SASymSizeY="0" SASymStartLocX="98" SASymStartLocY="293" SASymEndLocX="98"
+                      SASymEndLocY="315" SASymNameLocX="248" SASymNameLocY="291" SASymNameSizeX="108"
+                      SASymNameSizeY="17" SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0"
+                      SASymFromCardinality="&lt;unmarked&gt;" SASymFromCardNumber="0"
+                      SASymToCardinality="&lt;unmarked&gt;" SASymToCardNumber="0" SASymHasFromArrow="F"
+                      SASymHasToArrow="T">
+                <SALocation SALocX="98" SALocY="293" SALocType="1"/>
+                <SALocation SALocX="200" SALocY="293" SALocType="0"/>
+                <SALocation SALocX="200" SALocY="315" SALocType="0"/>
+                <SALocation SALocX="98" SALocY="315" SALocType="0"/>
+                <SAConnection SARelType="7" SAListPosition="2"/>
+                <SAConnection SARelType="7" SAListPosition="1"/>
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="754" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Special Name" SAPrpValue="MoveOnCrossing" SAPrpEditType="0" SAPrpLength="0"/>
+                <SARelation SARelId="_301" SARelTypeNum="7" SARelTypeName="connects"/>
+                <SARelation SARelId="_301" SARelTypeNum="9" SARelTypeName="connects"/>
+            </SASymbol>
+            <SASymbol SAObjId="_311" SAObjName="onOpeningFinished" SAObjMinorTypeName="Evénement système"
+                      SAObjMinorTypeNum="754" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:48:06" SAObjFQName="&quot;onOpeningFinished&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_309" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="6" SASymXPEntity="7" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="6"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0010" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x8001" SASymFlags2="0x1000"
+                      SASymFlags3="0x0000" SASymTextFlags="0x063a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0001" SASymSeqNum="6" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="6" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="0" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="343" SASymLocY="431"
+                      SASymSizeX="125" SASymSizeY="0" SASymStartLocX="343" SASymStartLocY="400" SASymEndLocX="343"
+                      SASymEndLocY="431" SASymNameLocX="513" SASymNameLocY="391" SASymNameSizeX="122"
+                      SASymNameSizeY="17" SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0"
+                      SASymFromCardinality="&lt;unmarked&gt;" SASymFromCardNumber="0"
+                      SASymToCardinality="&lt;unmarked&gt;" SASymToCardNumber="0" SASymHasFromArrow="F"
+                      SASymHasToArrow="T">
+                <SALocation SALocX="343" SALocY="400" SALocType="1"/>
+                <SALocation SALocX="443" SALocY="400" SALocType="0"/>
+                <SALocation SALocX="443" SALocY="431" SALocType="0"/>
+                <SALocation SALocX="343" SALocY="431" SALocType="0"/>
+                <SAConnection SARelType="7" SAListPosition="2"/>
+                <SAConnection SARelType="7" SAListPosition="1"/>
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="754" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Special Name" SAPrpValue="onOpeningFinished" SAPrpEditType="0" SAPrpLength="0"/>
+                <SARelation SARelId="_302" SARelTypeNum="7" SARelTypeName="connects"/>
+                <SARelation SARelId="_302" SARelTypeNum="9" SARelTypeName="connects"/>
+            </SASymbol>
+            <SASymbol SAObjId="_313" SAObjName="onClosingFinished" SAObjMinorTypeName="Evénement système"
+                      SAObjMinorTypeNum="754" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:41:44" SAObjFQName="&quot;onClosingFinished&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_306" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="5" SASymXPEntity="5" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="7"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0010" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x8001" SASymFlags2="0x1000"
+                      SASymFlags3="0x0000" SASymTextFlags="0x063a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0001" SASymSeqNum="4" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="4" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="0" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="343" SASymLocY="186"
+                      SASymSizeX="125" SASymSizeY="0" SASymStartLocX="343" SASymStartLocY="170" SASymEndLocX="343"
+                      SASymEndLocY="211" SASymNameLocX="492" SASymNameLocY="161" SASymNameSizeX="116"
+                      SASymNameSizeY="17" SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0"
+                      SASymFromCardinality="&lt;unmarked&gt;" SASymFromCardNumber="0"
+                      SASymToCardinality="&lt;unmarked&gt;" SASymToCardNumber="0" SASymHasFromArrow="F"
+                      SASymHasToArrow="T">
+                <SALocation SALocX="343" SALocY="170" SALocType="1"/>
+                <SALocation SALocX="443" SALocY="170" SALocType="0"/>
+                <SALocation SALocX="443" SALocY="211" SALocType="0"/>
+                <SALocation SALocX="343" SALocY="211" SALocType="0"/>
+                <SAConnection SARelType="7" SAListPosition="2"/>
+                <SAConnection SARelType="7" SAListPosition="1"/>
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="754" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Special Name" SAPrpValue="onClosingFinished" SAPrpEditType="0" SAPrpLength="0"/>
+                <SARelation SARelId="_302" SARelTypeNum="7" SARelTypeName="connects"/>
+                <SARelation SARelId="_302" SARelTypeNum="9" SARelTypeName="connects"/>
+            </SASymbol>
+            <SASymbol SAObjId="_314" SAObjName="onGateClosed" SAObjMinorTypeName="Evénement système"
+                      SAObjMinorTypeNum="754" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:37:24" SAObjFQName="&quot;onGateClosed&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_305" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="4" SASymXPEntity="4" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="5"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0010" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x8001" SASymFlags2="0x1000"
+                      SASymFlags3="0x0000" SASymTextFlags="0x063a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0001" SASymSeqNum="3" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="3" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="0" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="219" SASymLocY="243"
+                      SASymSizeX="125" SASymSizeY="0" SASymStartLocX="340" SASymStartLocY="243" SASymEndLocX="98"
+                      SASymEndLocY="243" SASymNameLocX="264" SASymNameLocY="243" SASymNameSizeX="91" SASymNameSizeY="17"
+                      SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0"
+                      SASymFromCardinality="&lt;unmarked&gt;" SASymFromCardNumber="0"
+                      SASymToCardinality="&lt;unmarked&gt;" SASymToCardNumber="0" SASymHasFromArrow="F"
+                      SASymHasToArrow="T">
+                <SALocation SALocX="340" SALocY="243" SALocType="1"/>
+                <SALocation SALocX="98" SALocY="243" SALocType="0"/>
+                <SAConnection SARelType="9" SAListPosition="2"/>
+                <SAConnection SARelType="7" SAListPosition="1"/>
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="754" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Special Name" SAPrpValue="onGateClosed" SAPrpEditType="0" SAPrpLength="0"/>
+                <SARelation SARelId="_302" SARelTypeNum="7" SARelTypeName="connects"/>
+                <SARelation SARelId="_301" SARelTypeNum="9" SARelTypeName="connects"/>
+            </SASymbol>
+            <SASymbol SAObjId="_303" SAObjName="onTrainLeft" SAObjMinorTypeName="Evénement système"
+                      SAObjMinorTypeNum="754" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:40:53" SAObjFQName="&quot;onTrainLeft&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_286" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="3" SASymXPEntity="3" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="4"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0010" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x8001" SASymFlags2="0x1000"
+                      SASymFlags3="0x0000" SASymTextFlags="0x063a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0001" SASymSeqNum="2" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="2" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="0" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="219" SASymLocY="376"
+                      SASymSizeX="125" SASymSizeY="0" SASymStartLocX="98" SASymStartLocY="357" SASymEndLocX="340"
+                      SASymEndLocY="357" SASymNameLocX="255" SASymNameLocY="356" SASymNameSizeX="72" SASymNameSizeY="17"
+                      SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0"
+                      SASymFromCardinality="&lt;unmarked&gt;" SASymFromCardNumber="0"
+                      SASymToCardinality="&lt;unmarked&gt;" SASymToCardNumber="0" SASymHasFromArrow="F"
+                      SASymHasToArrow="T">
+                <SALocation SALocX="98" SALocY="357" SALocType="1"/>
+                <SALocation SALocX="340" SALocY="357" SALocType="0"/>
+                <SAConnection SARelType="9" SAListPosition="2"/>
+                <SAConnection SARelType="7" SAListPosition="1"/>
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="754" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Special Name" SAPrpValue="onTrainLeft" SAPrpEditType="0" SAPrpLength="0"/>
+                <SARelation SARelId="_301" SARelTypeNum="7" SARelTypeName="connects"/>
+                <SARelation SARelId="_302" SARelTypeNum="9" SARelTypeName="connects"/>
+            </SASymbol>
+            <SASymbol SAObjId="_304" SAObjName="onTrainIncoming" SAObjMinorTypeName="Evénement système"
+                      SAObjMinorTypeNum="754" SAObjMajorTypeNum="2" SAObjAuditId="lqurent" SAObjUpdateDate="15/05/2017"
+                      SAObjUpdateTime="14:13:52" SAObjFQName="&quot;onTrainIncoming&quot;" SASymIdDgm="_274"
+                      SASymIdDef="_285" SASymArrangement="0" SASymOtherSymbology="0" SASymProperties="0x0000"
+                      SASymOrder="2" SASymXPEntity="2" SASymXPLink="65535" SASymXPGroup="65535" SASymXPSibling="3"
+                      SASymXPSubordinate="65535" SASymPenStyle="0x0010" SASymFontName="" SASymFontNameForName=""
+                      SASymFontNameForGC="" SASymFontHeight="0x0000" SASymFontHeightForName="0x0000"
+                      SASymFontHeightForGC="0x0000" SASymFontFlags="0x0000" SASymFontFlagsForName="0x0000"
+                      SASymFontFlagsForGC="0x0000" SASymLineStyle="0x0003" SASymFlags="0x8001" SASymFlags2="0x1000"
+                      SASymFlags3="0x0000" SASymTextFlags="0x063a" SASymStyle="0" SASymAuxStyle="0x0000"
+                      SASymOccurs="0x01" SASymOccOffset="0x00" SASymBGColor="0x00" SASymFGColor="0x00"
+                      SASymPrompt="0x00" SASymFrExArcChar="0x00" SASymToExArcChar="0x00" SASymUncleCount="0x00"
+                      SASymStyleFlags="0x0001" SASymSeqNum="1" SASymRotation="0" SASymError1="0x00" SASymError2="0x00"
+                      SASymHideProgeny="0" SASymHidden="0" SASymOtherForm="0" SASymHasDspMode="0" SASymDspMode="0x0000"
+                      SASymDspModeExt="0x00000000" SASymCLevelNumber="1" SASymPenColorOn="1" SASymPenColorRed="0"
+                      SASymPenColorGreen="130" SASymPenColorBlue="236" SASymFillColorOn="0" SASymFillColorRed="176"
+                      SASymFillColorGreen="213" SASymFillColorBlue="255" SASymFontColorOn="0" SASymFontColorRed="0"
+                      SASymFontColorGreen="0" SASymFontColorBlue="0" SASymFontColorRedForName="0"
+                      SASymFontColorGreenForName="0" SASymFontColorBlueForName="0" SASymFontColorRedForGC="0"
+                      SASymFontColorGreenForGC="0" SASymFontColorBlueForGC="0" SASymLocX="219" SASymLocY="139"
+                      SASymSizeX="125" SASymSizeY="0" SASymStartLocX="98" SASymStartLocY="139" SASymEndLocX="340"
+                      SASymEndLocY="139" SASymNameLocX="271" SASymNameLocY="139" SASymNameSizeX="104"
+                      SASymNameSizeY="17" SASymDescLocX="0" SASymDescLocY="0" SASymDescSizeX="0" SASymDescSizeY="0"
+                      SASymFromCardinality="&lt;unmarked&gt;" SASymFromCardNumber="0"
+                      SASymToCardinality="&lt;unmarked&gt;" SASymToCardNumber="0" SASymHasFromArrow="F"
+                      SASymHasToArrow="T">
+                <SALocation SALocX="98" SALocY="139" SALocType="1"/>
+                <SALocation SALocX="340" SALocY="139" SALocType="0"/>
+                <SAConnection SARelType="9" SAListPosition="2"/>
+                <SAConnection SARelType="7" SAListPosition="1"/>
+                <SAProperty SAPrpName="~C~" SAPrpValue="2" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="~T~" SAPrpValue="754" SAPrpEditType="0" SAPrpLength="0"/>
+                <SAProperty SAPrpName="Use Automatic Gradient Fills" SAPrpValue="T" SAPrpEditType="4" SAPrpLength="1"/>
+                <SAProperty SAPrpName="Special Name" SAPrpValue="onTrainIncoming" SAPrpEditType="0" SAPrpLength="0"/>
+                <SARelation SARelId="_301" SARelTypeNum="7" SARelTypeName="connects"/>
+                <SARelation SARelId="_302" SARelTypeNum="9" SARelTypeName="connects"/>
+            </SASymbol>
+        </SADiagram>
+    </Class>
+</Classes>
