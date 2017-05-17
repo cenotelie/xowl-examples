@@ -1,0 +1,62 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xowl: <http://xowl.org/infra/denotation/schema#>
+PREFIX syseng:   <http://holons-hub.com/domains/syseng#>
+PREFIX artifact: <http://holons-hub.com/artifact/>
+BASE             <http://holons-hub.com/artifact/>
+
+RULE "Diagram is the system's state machine"
+	SIGN ?diagram
+		WITH xowl:shape = "StateMachine_Shape"
+IS
+	A SEME syseng:System ID (artifact:System "#" ?diagram.xowl:name) AS ?system
+		WITH syseng:name = ?diagram.xowl:name
+		WITH syseng:hasBehavior = ?behavior
+	AND A SEME syseng:Behavior AS ?behavior
+		BIND TO SIGN ?diagram
+
+
+RULE "State shapes are states of the state machine"
+	SIGN ?sign
+		WITH xowl:shape = "State_Shape"
+IS
+	A SEME syseng:State ID (artifact:State "#" ?sign.xowl:name) AS ?state
+		WITH syseng:name = ?sign.xowl:name
+		BIND TO SIGN ?sign
+
+
+RULE "Arrows are transitions (events) between states"
+	SIGN ?arrow
+		WITH xowl:shape = "Transition_Edge"
+		RELATION xowl:from ?signFrom
+		RELATION xowl:to ?signTo
+	AND SIGN ?signFrom
+		BOUND TO SEME ?stateOrigin
+	AND SIGN ?signTo
+		BOUND TO SEME ?stateTarget
+IS
+	A SEME syseng:Event ID (artifact:Event "#" ?arrow.xowl:name) AS ?event
+		WITH syseng:name = ?arrow.xowl:name
+		WITH syseng:origin = ?stateOrigin
+		WITH syseng:target = ?stateTarget
+		BIND TO SIGN ?arrow
+
+
+RULE "Initial state"
+	SIGN ?signInit
+		WITH xowl:shape = "Pseudostate_InitialShape"
+	AND SIGN ?arrow
+		WITH xowl:shape = "Transition_Edge"
+		RELATION xowl:from ?signInit
+		RELATION xowl:to ?signState
+	AND SIGN ?signState
+		WITH xowl:shape = "State_Shape"
+		BOUND TO SEME ?state
+	AND SIGN ?signDiagram
+		WITH xowl:shape = "StateMachine_Shape"
+		BOUND TO SEME ?behavior
+IS
+	SEME ?behavior
+		WITH syseng:initState = ?state
