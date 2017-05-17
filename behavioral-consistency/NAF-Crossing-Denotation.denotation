@@ -1,0 +1,66 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xowl: <http://xowl.org/infra/denotation/schema#>
+PREFIX syseng:   <http://holons-hub.com/domains/syseng#>
+PREFIX artifact: <http://holons-hub.com/artifact/>
+BASE             <http://holons-hub.com/artifact/>
+
+RULE "Diagram is a Scenario"
+	SIGN ?diagram
+		WITH xowl:shape = "diagram"
+IS
+	A SEME syseng:Scenario ID (artifact:Scenario "#" ?diagram.xowl:name)
+		WITH syseng:name = ?diagram.xowl:name
+		BIND TO SIGN ?diagram
+
+
+RULE "Lifelines are Systems"
+	SIGN ?lifeline
+		WITH xowl:shape = "lifeline"
+IS
+	A SEME syseng:System ID (artifact:System "#" ?lifeline.xowl:name)
+		WITH syseng:name = ?lifeline.xowl:name
+		BIND TO SIGN ?lifeline
+
+
+RULE "Arrows are Event bearing Messages between Systems"
+	SIGN ?arrow
+		WITH xowl:shape = "arrow"
+		RELATION xowl:from ?signFrom
+		RELATION xowl:to ?signTo
+	AND SIGN ?signFrom
+		BOUND TO SEME ?systemOrigin
+	AND SIGN ?signTo
+		BOUND TO SEME ?systemTarget
+IS
+	A SEME syseng:Event ID (artifact:Event "#" ?arrow.xowl:name) AS ?event
+		WITH syseng:name = ?arrow.xowl:name
+	AND A SEME syseng:Message
+		WITH syseng:event = ?event
+		WITH syseng:from = ?systemOrigin
+		WITH syseng:to = ?systemTarget
+		BIND TO SIGN ?arrow
+
+
+RULE "Arrows are parts for a Scenario"
+	SIGN ?arrow
+		RELATION xowl:containedBy ?diagram
+		BOUND TO SEME ?message
+	AND SIGN ?diagram
+		BOUND TO SEME ?scenario
+IS
+	SEME ?scenario
+		WITH syseng:contains = ?message
+
+
+RULE "Arrows are ordered Messages"
+	SIGN ?arrow1
+		RELATION xowl:next ?arrow2
+		BOUND TO SEME ?message1
+	AND SIGN ?arrow2
+		BOUND TO SEME ?message2
+IS
+	SEME ?message1
+		WITH syseng:next = ?message2
