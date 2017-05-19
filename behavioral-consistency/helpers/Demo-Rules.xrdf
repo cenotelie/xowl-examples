@@ -1,0 +1,37 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xowl: <http://xowl.org/infra/denotation/schema#>
+PREFIX syseng:   <http://holons-hub.com/domains/syseng#>
+PREFIX artifact: <http://holons-hub.com/artifact/>
+BASE             <http://holons-hub.com/artifact/>
+
+
+rule syseng:scenario-first-event {
+    ?s rdf:type syseng:Scenario .
+    ?s syseng:contains ?m .
+    ?m rdf:type syseng:Message .
+    NOT ?m2 syseng:next ?m .
+} => {
+    ?s syseng:first ?m .
+}
+
+rule syseng:scenario-and-system {
+    GRAPH ?g1 {
+        ?scenario rdf:type syseng:Scenario .
+        ?scenario syseng:contains ?system .
+    }
+    GRAPH ?g2 {
+        ?scenario syseng:first ?message .
+    }
+    GRAPH ?g3 {
+        ?system rdf:type syseng:System .
+        ?system syseng:hasBehavior ?behavior .
+        ?behavior syseng:initState ?init .
+    }
+}
+WITH (nil? (finalState system message init))
+=> {
+    ?scenario syseng:inconsistentWith ?system .
+}

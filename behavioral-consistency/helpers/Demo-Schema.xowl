@@ -1,0 +1,67 @@
+Prefix(xsd: = <http://www.w3.org/2001/XMLSchema#>)
+Prefix( : = <http://holons-hub.com/domains/syseng#>)
+
+Ontology( <http://holons-hub.com/domains/syseng>
+    FunctionDefinition(:toStr (fn [value]
+        (if (nil? value)
+            nil
+            (xowl/iriToStr value))))
+
+    FunctionDefinition(:smNextState (fn [state event]
+        (toStr (xowl/firstValueOf
+            (xowl/sparql (str
+                "PREFIX : <http://holons-hub.com/domains/syseng#> "
+                "SELECT ?s WHERE { GRAPH ?g { <" event "> :origin <" state "> ."
+                "                             <" event "> :target ?s . } }"))
+            "s"))))
+
+    FunctionDefinition(:smSimulate (fn [init events]
+        (if (nil? init)
+            nil
+            (if (empty? events)
+                init
+                (smSimulate
+                    (smNextState init (first events))
+                    (next events))))))
+
+
+
+
+    FunctionDefinition(:msgGetEvent (fn [message]
+        (toStr (xowl/firstValueOf
+            (xowl/sparql (str
+                "PREFIX : <http://holons-hub.com/domains/syseng#> "
+                "SELECT ?e WHERE { GRAPH ?g { <" message "> :event ?e . } }"))
+            "e"))))
+
+    FunctionDefinition(:msgGetNext (fn [message]
+        (toStr (xowl/firstValueOf
+            (xowl/sparql (str
+                "PREFIX : <http://holons-hub.com/domains/syseng#> "
+                "SELECT ?m WHERE { GRAPH ?g { <" message "> :next ?m . } }"))
+            "m"))))
+
+    FunctionDefinition(:msgGetTo (fn [message]
+        (toStr (xowl/firstValueOf
+            (xowl/sparql (str
+                "PREFIX : <http://holons-hub.com/domains/syseng#> "
+                "SELECT ?s WHERE { GRAPH ?g { <" message "> :to ?s . } }"))
+            "s"))))
+
+    FunctionDefinition(:finalState (fn [system message state]
+        (if (nil? state)
+            nil
+            (if (nil? message)
+                state
+                    (if (= system (msgGetTo message))
+                        (do
+                            (xowl/logInfo (str "@" state " -> " (msgGetEvent message) " -> " (smNextState state (msgGetEvent message))))
+                            (finalState
+                                system
+                                (msgGetNext message)
+                                (smNextState state (msgGetEvent message))))
+                        (finalState
+                            system
+                            (msgGetNext message)
+                            state))))))
+)
