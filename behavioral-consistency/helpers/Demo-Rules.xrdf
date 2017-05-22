@@ -3,33 +3,36 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xowl: <http://xowl.org/infra/denotation/schema#>
-PREFIX syseng:   <http://holons-hub.com/domains/syseng#>
-PREFIX artifact: <http://holons-hub.com/artifact/>
-BASE             <http://holons-hub.com/artifact/>
+PREFIX kernel:   <http://xowl.org/platform/schemas/kernel#>
+PREFIX syseng:   <http://holons-hub.com/collab/schemas/syseng#>
+PREFIX artifact: <http://holons-hub.com/collab/artifact/>
+BASE             <http://holons-hub.com/collab/artifact/>
 
 
-rule syseng:scenario-first-event {
+rule syseng:scenario-first-message {
     ?s rdf:type syseng:Scenario .
-    ?s syseng:contains ?m .
+    ?s syseng:scenarioMessages ?m .
     ?m rdf:type syseng:Message .
-    NOT ?m2 syseng:next ?m .
+    NOT ?m2 syseng:msgNext ?m .
 } => {
     ?s syseng:first ?m .
 }
 
 rule syseng:scenario-and-system {
-    GRAPH ?g1 {
-        ?scenario rdf:type syseng:Scenario .
-        ?scenario syseng:contains ?system .
-    }
-    GRAPH ?g2 {
-        ?scenario syseng:first ?message .
-    }
-    GRAPH ?g3 {
-        ?system rdf:type syseng:System .
-        ?system syseng:hasBehavior ?behavior .
-        ?behavior syseng:initState ?init .
-    }
+	GRAPH ?g1 {
+	    ?scenario rdf:type syseng:Scenario .
+	    ?scenario syseng:contains ?system .
+	    ?scenario kernel:name ?scenarioName .
+	}
+	GRAPH ?g2 {
+	    ?scenario syseng:first ?message .
+	}
+	GRAPH ?g3 {
+	    ?system rdf:type syseng:System .
+	    ?system syseng:hasBehavior ?behavior .
+	    ?system kernel:name ?systemName .
+	    ?behavior syseng:initState ?init .
+	}
 }
 WITH (nil? (finalState system message init))
 => {
