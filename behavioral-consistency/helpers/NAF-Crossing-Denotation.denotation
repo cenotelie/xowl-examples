@@ -3,29 +3,34 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xowl: <http://xowl.org/infra/denotation/schema#>
-PREFIX syseng:   <http://holons-hub.com/domains/syseng#>
-PREFIX artifact: <http://holons-hub.com/artifact/>
-BASE             <http://holons-hub.com/artifact/>
+PREFIX kernel:   <http://xowl.org/platform/schemas/kernel#>
+PREFIX syseng:   <http://holons-hub.com/collab/schemas/syseng#>
+PREFIX artifact: <http://holons-hub.com/collab/artifact/>
+BASE             <http://holons-hub.com/collab/artifact/>
 
 RULE "Diagram is a Scenario"
 	SIGN ?diagram
 		WITH xowl:shape = "diagram"
 IS
 	A SEME syseng:Scenario ID (artifact:Scenario "#" ?diagram.xowl:name)
-		WITH syseng:name = ?diagram.xowl:name
+		WITH kernel:name = ?diagram.xowl:name
 		BIND TO SIGN ?diagram
 
 
-RULE "Lifelines are Systems"
+RULE "Lifelines are Systems and parts of the scenario"
 	SIGN ?lifeline
 		WITH xowl:shape = "lifeline"
+		RELATION xowl:containedBy ?diagram
+	AND SIGN ?diagram
+		BOUND TO SEME ?scenario
 IS
-	A SEME syseng:System ID (artifact:System "#" ?lifeline.xowl:name)
-		WITH syseng:name = ?lifeline.xowl:name
+	A SEME syseng:System ID (artifact:System "#" ?lifeline.xowl:name) AS ?system
+		WITH kernel:name = ?lifeline.xowl:name
 		BIND TO SIGN ?lifeline
+	AND SEME ?scenario
+		WITH syseng:contains = ?system
 
-
-RULE "Arrows are Event bearing Messages between Systems"
+RULE "Arrows are Messages between Systems and bear System Events"
 	SIGN ?arrow
 		WITH xowl:shape = "arrow"
 		RELATION xowl:from ?signFrom
@@ -35,24 +40,25 @@ RULE "Arrows are Event bearing Messages between Systems"
 	AND SIGN ?signTo
 		BOUND TO SEME ?systemTarget
 IS
-	A SEME syseng:Event ID (artifact:Event "#" ?arrow.xowl:name) AS ?event
-		WITH syseng:name = ?arrow.xowl:name
+	A SEME syseng:SystemEvent ID (artifact:SystemEvent "#" ?arrow.xowl:name) AS ?event
+		WITH kernel:name = ?arrow.xowl:name
 	AND A SEME syseng:Message
-		WITH syseng:event = ?event
-		WITH syseng:from = ?systemOrigin
-		WITH syseng:to = ?systemTarget
+		WITH syseng:msgEvent = ?event
+		WITH syseng:msgFrom = ?systemOrigin
+		WITH syseng:msgTo = ?systemTarget
 		BIND TO SIGN ?arrow
 
 
 RULE "Arrows are parts for a Scenario"
 	SIGN ?arrow
+		WITH xowl:shape = "arrow"
 		RELATION xowl:containedBy ?diagram
 		BOUND TO SEME ?message
 	AND SIGN ?diagram
 		BOUND TO SEME ?scenario
 IS
 	SEME ?scenario
-		WITH syseng:contains = ?message
+		WITH syseng:scenarioMessages = ?message
 
 
 RULE "Arrows are ordered Messages"
@@ -63,4 +69,4 @@ RULE "Arrows are ordered Messages"
 		BOUND TO SEME ?message2
 IS
 	SEME ?message1
-		WITH syseng:next = ?message2
+		WITH syseng:msgNext = ?message2

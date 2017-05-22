@@ -3,18 +3,19 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xowl: <http://xowl.org/infra/denotation/schema#>
-PREFIX syseng:   <http://holons-hub.com/domains/syseng#>
-PREFIX artifact: <http://holons-hub.com/artifact/>
-BASE             <http://holons-hub.com/artifact/>
+PREFIX kernel:   <http://xowl.org/platform/schemas/kernel#>
+PREFIX syseng:   <http://holons-hub.com/collab/schemas/syseng#>
+PREFIX artifact: <http://holons-hub.com/collab/artifact/>
+BASE             <http://holons-hub.com/collab/artifact/>
 
 RULE "Diagram is the system's state machine"
 	SIGN ?diagram
 		WITH xowl:shape = "StateMachine_Shape"
 IS
 	A SEME syseng:System ID (artifact:System "#" ?diagram.xowl:name) AS ?system
-		WITH syseng:name = ?diagram.xowl:name
-		WITH syseng:hasBehavior = ?behavior
-	AND A SEME syseng:Behavior AS ?behavior
+		WITH kernel:name = ?diagram.xowl:name
+		WITH syseng:hasBehavior = ?sm
+	AND A SEME syseng:StateMachine AS ?sm
 		BIND TO SIGN ?diagram
 
 
@@ -23,11 +24,11 @@ RULE "State shapes are states of the state machine"
 		WITH xowl:shape = "State_Shape"
 IS
 	A SEME syseng:State ID (artifact:State "#" ?sign.xowl:name) AS ?state
-		WITH syseng:name = ?sign.xowl:name
+		WITH kernel:name = ?sign.xowl:name
 		BIND TO SIGN ?sign
 
 
-RULE "Arrows are transitions (events) between states"
+RULE "Arrows are Transitions between States triggered by System Event"
 	SIGN ?arrow
 		WITH xowl:shape = "Transition_Edge"
 		RELATION xowl:from ?signFrom
@@ -37,14 +38,16 @@ RULE "Arrows are transitions (events) between states"
 	AND SIGN ?signTo
 		BOUND TO SEME ?stateTarget
 IS
-	A SEME syseng:Event ID (artifact:Event "#" ?arrow.xowl:name) AS ?event
-		WITH syseng:name = ?arrow.xowl:name
-		WITH syseng:origin = ?stateOrigin
-		WITH syseng:target = ?stateTarget
+	A SEME syseng:SystemEvent ID (artifact:SystemEvent "#" ?arrow.xowl:name) AS ?event
+		WITH kernel:name = ?arrow.xowl:name
+	AND A SEME syseng:Transition
+		WITH syseng:transitionSymbol = ?event
+		WITH syseng:transitionFrom = ?stateOrigin
+		WITH syseng:transitionTo = ?stateTarget
 		BIND TO SIGN ?arrow
 
 
-RULE "Initial state"
+RULE "Pseudo-state initial state is the State Machine's Initial state"
 	SIGN ?signInit
 		WITH xowl:shape = "Pseudostate_InitialShape"
 	AND SIGN ?arrow
@@ -56,7 +59,7 @@ RULE "Initial state"
 		BOUND TO SEME ?state
 	AND SIGN ?signDiagram
 		WITH xowl:shape = "StateMachine_Shape"
-		BOUND TO SEME ?behavior
+		BOUND TO SEME ?sm
 IS
-	SEME ?behavior
+	SEME ?sm
 		WITH syseng:initState = ?state

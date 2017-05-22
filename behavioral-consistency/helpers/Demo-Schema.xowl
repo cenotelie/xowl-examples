@@ -1,19 +1,226 @@
+Prefix(owl: = <http://www.w3.org/2002/07/owl#>)
+Prefix(rdf: = <http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(rdfs: = <http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(xml: = <http://www.w3.org/XML/1998/namespace>)
 Prefix(xsd: = <http://www.w3.org/2001/XMLSchema#>)
-Prefix( : = <http://holons-hub.com/domains/syseng#>)
+Prefix(kernel: = <http://xowl.org/platform/schemas/kernel#>)
+Prefix(: = <http://holons-hub.com/collab/schemas/syseng#>)
 
-Ontology( <http://holons-hub.com/domains/syseng>
+Ontology(<http://holons-hub.com/collab/schemas/syseng>
+    DataPropertyAssertion(rdfs:label <http://holons-hub.com/collab/schemas/syseng> "Holons-Hub - System Engineering")
+
+    Declaration(Class(:Requirement))
+    DataPropertyAssertion(rdfs:label :Requirement "Requirement")
+    DataPropertyAssertion(rdfs:comment :Requirement "Represents a requirement for a system under study.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :Requirement <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:Requirement kernel:Resource)
+
+    Declaration(Class(:Module))
+    DataPropertyAssertion(rdfs:label :Module "Module")
+    DataPropertyAssertion(rdfs:comment :Module "Represents a module of requirements, i.e. a collection of requirements.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :Module <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:Module kernel:Resource)
+
+    Declaration(DataProperty(:title))
+    FunctionalDataProperty(:title)
+    DataPropertyDomain(:title :Requirement)
+    DataPropertyRange(:title xsd:string)
+    DataPropertyAssertion(rdfs:label :title "title")
+    DataPropertyAssertion(rdfs:comment :title "The main title of a requirement.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :title <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(DataProperty(:description))
+    FunctionalDataProperty(:description)
+    DataPropertyDomain(:description :Requirement)
+    DataPropertyRange(:description xsd:string)
+    DataPropertyAssertion(rdfs:label :description "description")
+    DataPropertyAssertion(rdfs:comment :description "The main description of a requirement.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :description <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(DataProperty(:identifier))
+    FunctionalDataProperty(:identifier)
+    DataPropertyDomain(:identifier :Requirement)
+    DataPropertyRange(:identifier xsd:string)
+    DataPropertyAssertion(rdfs:label :identifier "identifier")
+    DataPropertyAssertion(rdfs:comment :identifier "In the context of a collection of requirements, the identifier of a particular one.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :identifier <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:container))
+    FunctionalObjectProperty(:container)
+    ObjectPropertyDomain(:container :Requirement)
+    ObjectPropertyRange(:container :Module)
+    DataPropertyAssertion(rdfs:label :container "container")
+    DataPropertyAssertion(rdfs:comment :container "The module that contains a requirement.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :container <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(DataProperty(:primaryText))
+    FunctionalDataProperty(:primaryText)
+    DataPropertyDomain(:primaryText :Requirement)
+    DataPropertyRange(:primaryText xsd:string)
+    DataPropertyAssertion(rdfs:label :primaryText "primaryText")
+    DataPropertyAssertion(rdfs:comment :primaryText "A tool vendor-specific representation of a requirement's description")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :primaryText <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(DataProperty(:etag))
+    FunctionalDataProperty(:etag)
+    DataPropertyDomain(:etag :Requirement)
+    DataPropertyRange(:etag xsd:string)
+    DataPropertyAssertion(rdfs:label :etag "etag")
+    DataPropertyAssertion(rdfs:comment :etag "A tool vendor-specific information about the version of a requirement.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :etag <http://holons-hub.com/collab/schemas/syseng>)
+
+
+
+    Declaration(Class(:System))
+    DataPropertyAssertion(rdfs:label :System "System")
+    DataPropertyAssertion(rdfs:comment :System "Represents a system")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :System <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:System kernel:Resource)
+
+    Declaration(ObjectProperty(:hasBehavior))
+    FunctionalObjectProperty(:hasBehavior)
+    ObjectPropertyDomain(:hasBehavior :Message)
+    ObjectPropertyRange(:hasBehavior kernel:Resource)
+    DataPropertyAssertion(rdfs:label :hasBehavior "hasBehavior")
+    DataPropertyAssertion(rdfs:comment :hasBehavior "The definition of the system's behavior.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :hasBehavior <http://holons-hub.com/collab/schemas/syseng>)
+
+
+
+    Declaration(Class(:SystemEvent))
+    DataPropertyAssertion(rdfs:label :SystemEvent "SystemEvent")
+    DataPropertyAssertion(rdfs:comment :SystemEvent "Represents an event occurring for a system.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :SystemEvent <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:SystemEvent kernel:Resource)
+
+
+
+    Declaration(Class(:Scenario))
+    DataPropertyAssertion(rdfs:label :Scenario "Scenario")
+    DataPropertyAssertion(rdfs:comment :Scenario "Describes an operational scenario for a system.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :Scenario <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:Scenario kernel:Resource)
+
+    Declaration(ObjectProperty(:scenarioMessages))
+    ObjectPropertyDomain(:scenarioMessages :Scenario)
+    ObjectPropertyRange(:scenarioMessages :Message)
+    DataPropertyAssertion(rdfs:label :scenarioMessages "scenarioMessages")
+    DataPropertyAssertion(rdfs:comment :scenarioMessages "The messages that constitute this scenario.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :scenarioMessages <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(Class(:Message))
+    DataPropertyAssertion(rdfs:label :Message "Message")
+    DataPropertyAssertion(rdfs:comment :Message "A message that is sent from a system to another.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :Message <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:Message kernel:Resource)
+
+    Declaration(ObjectProperty(:msgEvent))
+    FunctionalObjectProperty(:msgEvent)
+    ObjectPropertyDomain(:msgEvent :Message)
+    ObjectPropertyRange(:msgEvent :SystemEvent)
+    DataPropertyAssertion(rdfs:label :msgEvent "msgEvent")
+    DataPropertyAssertion(rdfs:comment :msgEvent "The system event that is borne by the message.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgEvent <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:msgFrom))
+    FunctionalObjectProperty(:msgFrom)
+    ObjectPropertyDomain(:msgFrom :Message)
+    ObjectPropertyRange(:msgFrom :SystemEvent)
+    DataPropertyAssertion(rdfs:label :msgFrom "msgFrom")
+    DataPropertyAssertion(rdfs:comment :msgFrom "The system that is sending the message.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgFrom <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:msgTo))
+    FunctionalObjectProperty(:msgTo)
+    ObjectPropertyDomain(:msgTo :Message)
+    ObjectPropertyRange(:msgTo :SystemEvent)
+    DataPropertyAssertion(rdfs:label :msgTo "msgTo")
+    DataPropertyAssertion(rdfs:comment :msgTo "The system that receives the message.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgTo <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:msgNext))
+    FunctionalObjectProperty(:msgNext)
+    ObjectPropertyDomain(:msgNext :Message)
+    ObjectPropertyRange(:initState :Message)
+    DataPropertyAssertion(rdfs:label :msgNext "msgNext")
+    DataPropertyAssertion(rdfs:comment :msgNext "In a scenario, the message that follows this one.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgNext <http://holons-hub.com/collab/schemas/syseng>)
+
+
+
+    Declaration(Class(:StateMachine))
+    DataPropertyAssertion(rdfs:label :StateMachine "StateMachine")
+    DataPropertyAssertion(rdfs:comment :StateMachine "A state machine that can define the behavior of a system.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :StateMachine <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:StateMachine kernel:Resource)
+
+    Declaration(Class(:State))
+    DataPropertyAssertion(rdfs:label :State "State")
+    DataPropertyAssertion(rdfs:comment :State "A state in a state machine.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :State <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:State kernel:Resource)
+
+    Declaration(Class(:Transition))
+    DataPropertyAssertion(rdfs:label :Transition "Transition")
+    DataPropertyAssertion(rdfs:comment :Transition "A transition between states in a state machine.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :Transition <http://holons-hub.com/collab/schemas/syseng>)
+    SubClassOf(:Transition kernel:Resource)
+
+    Declaration(ObjectProperty(:initState))
+    FunctionalObjectProperty(:initState)
+    ObjectPropertyDomain(:initState :StateMachine)
+    ObjectPropertyRange(:initState :State)
+    DataPropertyAssertion(rdfs:label :initState "initState")
+    DataPropertyAssertion(rdfs:comment :initState "The initial state of a state machine.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :initState <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:transitionSymbol))
+    FunctionalObjectProperty(:transitionSymbol)
+    ObjectPropertyDomain(:transitionSymbol :Transition)
+    ObjectPropertyRange(:transitionSymbol :SystemEvent)
+    DataPropertyAssertion(rdfs:label :transitionSymbol "transitionSymbol")
+    DataPropertyAssertion(rdfs:comment :transitionSymbol "The system event that triggers this transition.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :transitionSymbol <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:transitionFrom))
+    FunctionalObjectProperty(:transitionFrom)
+    ObjectPropertyDomain(:transitionFrom :Transition)
+    ObjectPropertyRange(:transitionFrom :State)
+    DataPropertyAssertion(rdfs:label :transitionFrom "transitionFrom")
+    DataPropertyAssertion(rdfs:comment :transitionFrom "The origin state for the transition.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :transitionFrom <http://holons-hub.com/collab/schemas/syseng>)
+
+    Declaration(ObjectProperty(:transitionTo))
+    FunctionalObjectProperty(:transitionTo)
+    ObjectPropertyDomain(:transitionTo :Transition)
+    ObjectPropertyRange(:transitionTo :State)
+    DataPropertyAssertion(rdfs:label :transitionTo "transitionTo")
+    DataPropertyAssertion(rdfs:comment :transitionTo "The target state for the transition.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :transitionTo <http://holons-hub.com/collab/schemas/syseng>)
+
+
+
+
     FunctionDefinition(:toStr (fn [value]
         (if (nil? value)
             nil
             (xowl/iriToStr value))))
+    DataPropertyAssertion(rdfs:label :toStr "toStr")
+    DataPropertyAssertion(rdfs:comment :toStr "Converts an IRI object to its string definition.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :toStr <http://holons-hub.com/collab/schemas/syseng>)
 
     FunctionDefinition(:smNextState (fn [state event]
         (toStr (xowl/firstValueOf
             (xowl/sparql (str
-                "PREFIX : <http://holons-hub.com/domains/syseng#> "
-                "SELECT ?s WHERE { GRAPH ?g { <" event "> :origin <" state "> ."
-                "                             <" event "> :target ?s . } }"))
+                "PREFIX : <http://holons-hub.com/collab/schemas/syseng#> "
+                "SELECT ?s WHERE { GRAPH ?g { "
+                "?t :transitionSymbol <" event "> . "
+                "?t :transitionFrom <" state "> . "
+                "?t :transitionTo ?s .} }"))
             "s"))))
+    DataPropertyAssertion(rdfs:label :smNextState "smNextState")
+    DataPropertyAssertion(rdfs:comment :smNextState "Gets the next state in a state machine from the specified state with the specified event.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :smNextState <http://holons-hub.com/collab/schemas/syseng>)
 
     FunctionDefinition(:smSimulate (fn [init events]
         (if (nil? init)
@@ -23,30 +230,43 @@ Ontology( <http://holons-hub.com/domains/syseng>
                 (smSimulate
                     (smNextState init (first events))
                     (next events))))))
-
+    DataPropertyAssertion(rdfs:label :smSimulate "smSimulate")
+    DataPropertyAssertion(rdfs:comment :smSimulate "Simulates a state machine and get the last state for a sequence of inputs.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :smSimulate <http://holons-hub.com/collab/schemas/syseng>)
 
 
 
     FunctionDefinition(:msgGetEvent (fn [message]
         (toStr (xowl/firstValueOf
             (xowl/sparql (str
-                "PREFIX : <http://holons-hub.com/domains/syseng#> "
-                "SELECT ?e WHERE { GRAPH ?g { <" message "> :event ?e . } }"))
+                "PREFIX : <http://holons-hub.com/collab/schemas/syseng#> "
+                "SELECT ?e WHERE { GRAPH ?g { <" message "> :msgEvent ?e . } }"))
             "e"))))
+    DataPropertyAssertion(rdfs:label :msgGetEvent "msgGetEvent")
+    DataPropertyAssertion(rdfs:comment :msgGetEvent "Gets the event borne by the message.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgGetEvent <http://holons-hub.com/collab/schemas/syseng>)
+
 
     FunctionDefinition(:msgGetNext (fn [message]
         (toStr (xowl/firstValueOf
             (xowl/sparql (str
-                "PREFIX : <http://holons-hub.com/domains/syseng#> "
-                "SELECT ?m WHERE { GRAPH ?g { <" message "> :next ?m . } }"))
+                "PREFIX : <http://holons-hub.com/collab/schemas/syseng#> "
+                "SELECT ?m WHERE { GRAPH ?g { <" message "> :msgNext ?m . } }"))
             "m"))))
+    DataPropertyAssertion(rdfs:label :msgGetNext "msgGetNext")
+    DataPropertyAssertion(rdfs:comment :msgGetNext "Gets the message following this one.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgGetNext <http://holons-hub.com/collab/schemas/syseng>)
 
     FunctionDefinition(:msgGetTo (fn [message]
         (toStr (xowl/firstValueOf
             (xowl/sparql (str
-                "PREFIX : <http://holons-hub.com/domains/syseng#> "
-                "SELECT ?s WHERE { GRAPH ?g { <" message "> :to ?s . } }"))
+                "PREFIX : <http://holons-hub.com/collab/schemas/syseng#> "
+                "SELECT ?s WHERE { GRAPH ?g { <" message "> :msgTo ?s . } }"))
             "s"))))
+    DataPropertyAssertion(rdfs:label :msgGetTo "msgGetNext")
+    DataPropertyAssertion(rdfs:comment :msgGetTo "Gets the target system for this message.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :msgGetTo <http://holons-hub.com/collab/schemas/syseng>)
+
 
     FunctionDefinition(:finalState (fn [system message state]
         (if (nil? state)
@@ -54,14 +274,15 @@ Ontology( <http://holons-hub.com/domains/syseng>
             (if (nil? message)
                 state
                     (if (= system (msgGetTo message))
-                        (do
-                            (xowl/logInfo (str "@" state " -> " (msgGetEvent message) " -> " (smNextState state (msgGetEvent message))))
-                            (finalState
-                                system
-                                (msgGetNext message)
-                                (smNextState state (msgGetEvent message))))
+                        (finalState
+                            system
+                            (msgGetNext message)
+                            (smNextState state (msgGetEvent message)))
                         (finalState
                             system
                             (msgGetNext message)
                             state))))))
+    DataPropertyAssertion(rdfs:label :finalState "finalState")
+    DataPropertyAssertion(rdfs:comment :finalState "Gets the final state of a system, given the first message of a scenario and its initial state.")
+    ObjectPropertyAssertion(rdfs:isDefinedBy :finalState <http://holons-hub.com/collab/schemas/syseng>)
 )
